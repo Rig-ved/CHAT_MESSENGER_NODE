@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+      <h3 class="card-panel">Help center</h3>
+    </div>
+    
+    {{#each contacts}}
+    <div class="row">
+    <div class="col s12">
+          <small><i><em>{{#formatDate date}}{{/formatDate}}</em></i></small>
+        </div>    
+    <div class="col s12 m6">
+      <div class="card teal lighten-1">
+        <div class="card-content white-text">
+          <div>  
+          <span class="card-title" style="color:{{color}}">{{name}}</span>
+          </div>
+          <hr>
+          <p>{{message}}</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+   {{else}}
+   <p>No contacts found/p>
+   {{/each}} 
+
+</div>

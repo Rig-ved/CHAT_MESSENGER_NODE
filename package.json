@@ -1,0 +1,42 @@
+{
+  "name": "messenger",
+  "version": "1.0.0",
+  "description": "Create a chat application using node",
+  "main": "app.js",
+  "engines": {
+    "node":"8.9.1",
+    "npm":"5.5.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app.js"
+  },
+ 
+  "keywords": [
+    "message",
+    "messenger",
+    "chat",
+    "node-chat",
+    "deploy-chat"
+  ],
+  "author": "Anirban Bhattacharya",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.16.2",
+    "moment": "^2.24.0",
+    "mongoose": "^5.6.3",
+    "passport": "^0.4.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "razorpay": "^2.0.4",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}

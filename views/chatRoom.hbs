@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="row">
+        <div class="card-panel grey lighten-3">
+            {{!-- {{message}} --}}
+            {{#checkIf message.chats.length '>' 0}}
+            <div id="chat-ctr" class="chat-conv-container pink lighten-5">
+                {{!-- List all the previous conversations --}}
+                <div class="m1 chat-img">
+                    <img src="{{receiverSection.image}}" alt="receiver image">
+                    <div ><span class="">In conversation with</span></span> <span class="chat-receiver"> {{receiverSection.fullname}}</span></div>
+                </div>
+                <div class="sender-section">
+                    <div class="col l6">
+
+                 
+                    {{#each message.chats}}
+                    {{#if senderMessage}}
+                    {{!--     {{senderName}} --}}
+                        <div class="sender-receiver-chat-area">
+                            <div class="sender-receiver-card lighten-5 z-depth-1">
+                                <div class="row valign-wrapper">
+                                    <div class="col s2">
+                                        <img src="{{senderName.image}}" alt="sender Image" class="sender-receiver-img circle responsive-img">
+                                       
+                                    </div>
+                                    <div class="col s10">
+                                       
+                                        <small class="chat-time" ><i><em>{{#formatDate date}}{{/formatDate}}</em></i></small>
+                                        <p>
+                                           <span class="chat-who">You</span> : <span class="black-text">{{senderMessage}}</span>
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{else}}
+                    {{/if}}
+
+
+                    {{#if receiverMessage}}
+                     <div class="receiver-chat-area">
+                        <div class="sender-receiver-card lighten-5 z-depth-1">
+                            <div class="row valign-wrapper">
+                                <div class="col s2">
+                                    <img src="{{receiverName.image}}" alt="sender Image" class="sender-receiver-img circle responsive-img">
+                                   
+                                </div>
+                                <div class="col s10">
+                                        <small class="chat-time" style="border-bottom:1px dashed cyan"><i><em>{{#formatDate date}}{{/formatDate}}</em></i></small>
+                                        <p>
+                                            <span class="chat-who">{{receiverName.fullname}}</span> : <span class="black-text">{{receiverMessage}}
+                                        </span>
+                                        </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{else}}
+                    {{/if}}
+
+                    {{/each}}   
+                    </div>
+
+                </div>
+            </div>
+            {{/checkIf}}
+            {{#checkIf message.chats.length '<=' 0}}
+            <div class="card-panel center pink lighten-5">
+                <div class="m1 chat-img">
+                    <img src="{{receiverSection.image}}" alt="receiver image">
+                    <div class="chat-receiver">{{receiverSection.fullname}}</div>
+                </div>
+                <small class="">You and <span class="chat-receiver">{{receiverSection.fullname}}</span>  are still not connected. Say Hello !!</small>
+            </div>
+            {{/checkIf}}
+            <div class="row chat-form">
+                <form action="/chat/{{message._id}}" method="POST"
+                    class="card pink lighten-5 white-text hoverable">
+                    <div class="input-field col s12">
+                        <input id="message" name="message" type="text" class="validate" autocomplete="off">
+                        <label for="message">Type your message</label>
+
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button type="submit" class="btn btn-primary btn-small white-text">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

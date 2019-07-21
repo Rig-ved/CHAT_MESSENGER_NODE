@@ -1,0 +1,30 @@
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo"><i class="far fa-2x fa-comments"></i></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        {{#if user}}
+        <li><a href="/users" title="Users"><i class="material-icons">group</i></a></li>
+        <li><a href="/logout" title="Logout">Logout</a></li>
+        {{else}}
+        <li><a href="/about" title="About">About</a></li>
+        <li><a href="/contact" title="Contact us">Contact us</a></li>
+        <li><a href="/inbox" title="Inbox">Inbox</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    {{#if user}}
+    <li><a href="/logout">Logout</a></li>
+    {{else}}
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact us</a></li>
+    <li><a href="/inbox">Inbox</a></li>
+    {{/if}}
+  </ul>
+
+
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <h3 class="card-panel">All users</h3>
+    </div>
+    <div class="row">
+        {{#each users}}
+        <div class="col s3 m2">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{image}}">
+                    <span class="card-title"></span>
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content users-content teal white-text">
+                        <span>{{fullname}}</span>
+                    </div>
+                    <div class="card-action users-content">
+                        <a href="/startChat/{{_id}}"><button class="btn chat-btn light-green lighten-1"><span>Chat</span><i
+                                    class="pull-right fas fa-comment-dots"></i></button></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {{else}}
+        <p>No users found</p>
+        {{/each}}
+
+    </div>
+
+
+
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <h3 class="card-panel">Payment page</h3>
+    </div>
+    <div class="row">
+        <div class="card-panel">
+            <div class="row chat-time">Purchase to continue the conversation</div>
+            <form action="/chargeMoney" method="POST">
+                <script src="https://checkout.razorpay.com/v1/checkout.js" 
+                    data-key="{{rz.key_id}}" 
+                    data-amount="500" 
+                    data-currency="INR"
+                    data-order_id=""
+                    data-buttontext="Pay with Razorpay" 
+                    data-name="Purchase messages"
+                    data-description="Buy messages for Rs.5/-"
+                    data-image="/public/images/chat.png"
+                    data-theme.color="lightseagreen"></script>
+                <input type="hidden" custom="Hidden Element" name="hidden">
+            </form>
+        </div>
+    </div>
+</div>
